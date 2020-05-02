@@ -1,5 +1,35 @@
 ---
-layout: layouts/base.njk
-title: Title Strings
+layout: layouts/home.njk
+title: Koye's Blog
+templateClass: container
+eleventyNavigation:
+  key: home
+  order: 1
 ---
-<h1>This is global data: {{siteData.name}}</h1>
+
+<div class="hero-area">
+  <div class="row">
+    <div class="col ord-md-2">
+      <div class="img-holder">
+        <img src="../img/koye.png" />
+      </div>
+    </div>
+    <div class="col seven">
+      <h1>Developer and Music Enthusiast</h1>
+      <p>
+        Hi there 👋 I’m adekoyejo akinhanmi (koye for short), 
+        a software developer based in Lagos, Nigeria. I currently 
+        work as a front end developer at <a target="_blank" href="https://verifi.ng">verifi.ng</a>. 
+        I enjoy building applications that help solve real problems.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+<div>
+  <h2>Latest Post</h2>
+
+  {% set postslist = collections.posts | head(-1) %}
+  {% set postslistCounter = collections.posts | length %}
+  {% include "postslist.njk" %}
+</div>

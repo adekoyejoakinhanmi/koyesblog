@@ -1,7 +1,228 @@
-@import '_reset.scss';
+* {
+  box-sizing: border-box;
+}
 
-$var: red;
+$sun-gold:            #FFC701;
+$max-red:             #D11C1C;
+$turq-surf:           #00C2DC;
+$inter-blue:          #2E1CD1;
 
 body {
-  background-color: $var;
+  font-family: 'Anonymous Pro', sans-serif;
+  background: $sun-gold;
+  position: relative;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #171200;
+  background-image: url(../img/bg-sturvs.png);
+  background-repeat: repeat-y;
 }
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2;
+}
+p {
+  font-size: 18px;
+  line-height: 1.55;
+}
+h1 {
+  font-size: 45px;
+}
+.body-wrapper {
+  min-height: calc(100vh - 30px);
+  margin: 15px;
+  background-color: white;
+  transition: background-color 1s ease;
+  box-shadow: 0 2px 4px rgba($color: #000000, $alpha: 0.04);
+}
+.pre-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 30px)
+}
+a {
+  color: $inter-blue;
+  font-weight: 700;
+  text-decoration: none;
+} 
+.post-container,
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.content-body {
+  flex: 1;
+}
+.post-container {
+  max-width: 768px;
+}
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col {
+  position: relative;
+  flex: 1;
+  &.seven {
+    @media screen and (min-width: 768px) {
+      -ms-flex: 0 0 58.333333%;
+      flex: 0 0 58.333333%;
+      max-width: 58.333333%;
+    }
+  }
+}
+
+.ord-md-2 {
+  @media screen and (min-width: 768px){
+    order: 2;
+  }
+}
+.main-header {
+  nav.main-nav {
+    display: flex;
+    padding: 15px 0;
+    .nav {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0;
+      margin: 0;
+      li {
+        display: inline-block;
+        margin-left: 25px;
+        &.nav-item-active a {
+          color: $inter-blue;
+          font-weight: bold;
+        }
+        a {
+          display: block;
+          color: #000;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+.hero-area {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 6rem;
+}
+.divider {
+  width: 40px;
+  height: 5px;
+  margin: 3rem 0;
+  background: $sun-gold;
+}
+
+.img-holder {
+  position: relative;
+  text-align: right;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    z-index: 6;
+    left: -30px;
+    top: -30px;
+    background: url(../img/line-circle.svg);
+    background-size: cover;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    z-index: 3;
+    bottom: 10px;
+    right: -30px;
+    background: url(../img/dots-square.svg);
+    background-size: cover;
+  }
+  img {
+    z-index: 4;
+    position: relative;
+    box-shadow: 15px -15px 0 0 $sun-gold;
+  }
+}
+.footer {
+  display: flex;
+  padding: 25px 0;
+  justify-content: space-between;
+
+  &-links {
+    a {
+      margin-right: 20px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+pre,
+code {
+  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+  line-height: 1.5;
+}
+pre {
+  font-size: 14px;
+  line-height: 1.375;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  padding: 1em;
+  margin: .5em 0;
+  background-color: #f6f6f6;
+}
+.highlight-line {
+  display: block;
+  padding: 0.125em 1em;
+  text-decoration: none; /* override del, ins, mark defaults */
+  color: inherit; /* override del, ins, mark defaults */
+}
+
+/* allow highlighting empty lines */
+.highlight-line:empty:before {
+  content: " ";
+}
+/* avoid double line breaks when using display: block; */
+.highlight-line + br {
+  display: none;
+}
+
+.highlight-line-isdir {
+  color: #b0b0b0;
+  background-color: #222;
+}
+.highlight-line-active {
+  background-color: #444;
+  background-color: hsla(0, 0%, 27%, .8);
+}
+.highlight-line-add {
+  background-color: #45844b;
+}
+.highlight-line-remove {
+  background-color: #902f2f;
+}
+
