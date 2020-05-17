@@ -26,8 +26,8 @@ eleventyNavigation:
   </div>
 </div>
 <div class="divider"></div>
-<div>
-  <h2>Latest Post</h2>
+<div class="latest-posts">
+  <h2 class="mb-3">Latest Post</h2>
 
   {% set postslist = collections.posts | head(-1) %}
   {% set postslistCounter = collections.posts | length %}

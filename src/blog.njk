@@ -1,13 +1,15 @@
 ---
 layout: layouts/home.njk
 permalink: /blog/
+templateClass: post-container
 eleventyNavigation:
   key: blog
   order: 2
 ---
 
-<h1>Cat</h1>
-<div class="container">
+<h1 class="page-title">All Posts</h1>
+<div class="divider on-page"></div>
+<div class="post-list-container">
   {% set postslist = collections.posts %}
   {% include "postslist.njk" %}
 </div>
