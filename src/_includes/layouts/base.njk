@@ -6,8 +6,9 @@
     <title>{{ renderData.title or title or metadata.title }}</title>
     <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
     <link rel="stylesheet" href="{{ '/styles/index.css' | url }}">
+    <link rel="stylesheet" href="{{ '/styles/grid.css' | url }}">
     <link rel="stylesheet" href="{{ '/styles/prism-base16-monokai.dark.css' | url }}">
-    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300,400;500&display=swap" rel="stylesheet">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
   </head>
   <body>
@@ -19,7 +20,7 @@
             <nav class="main-nav">
               <div class="logo">
                 <a href="{{ '/' | url }}">
-                  <img src="../img/logo.svg" alt="{{ metadata.title }} blog" />
+                  <img src="{{ '/img/logo.svg' }}" alt="{{ metadata.title }} blog" />
                 </a>
               </div>
               {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
